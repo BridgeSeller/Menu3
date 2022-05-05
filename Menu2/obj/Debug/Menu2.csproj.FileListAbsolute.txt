@@ -1,0 +1,17 @@
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\bin\Debug\Menu2.exe.config
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\bin\Debug\Menu2.pdb
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.csproj.AssemblyReference.cache
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Properties.Resources.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.csproj.GenerateResource.cache
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.csproj.CoreCompileInputs.cache
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.exe
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.pdb
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Form1.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.GenreChoice.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Form2.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Form3.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Options.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.FormTic.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.csproj.CopyComplete
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.FormS.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.FormR.resources
