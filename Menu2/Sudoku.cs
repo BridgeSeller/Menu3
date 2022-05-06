@@ -29,8 +29,8 @@ namespace Menu2
         {
             Random rand = new Random();
             
-            board = new SudokuBoard(9);
-            board.RandomFillBoard();
+            board = new SudokuBoard(12);
+            board.RandomFillBoard(1);
 
             Size = new Size(360, 500);
             scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / board.GetSize();
@@ -55,6 +55,8 @@ namespace Menu2
                         button.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
                         button.Tag = "Locked";
                     }
+
+                    button.TabIndex = i + j * board.GetSize();
 
                     allButtons[j, i] = button;
                     Controls.Add(button);
@@ -83,10 +85,29 @@ namespace Menu2
         {
             Button senderB = (Button) sender;
             if ((string) senderB.Tag == "Locked") return;
-            if (e.KeyChar >= '1' && e.KeyChar <= '9')
+            if (e.KeyChar >= '0' && e.KeyChar <= '9')
             {
-                senderB.Text = e.KeyChar.ToString();
-                board.SetCell(senderB.TabIndex, e.KeyChar - 48);
+                if (senderB.Text == "" && e.KeyChar == '0') return;
+                if ((board.GetCell(senderB.TabIndex) * 10 + e.KeyChar - 48) > board.GetSize()) return;
+                
+                senderB.Text += e.KeyChar.ToString();
+                board.SetCell(senderB.TabIndex, board.GetCell(senderB.TabIndex) * 10 + e.KeyChar - 48);
+            }
+            else if (e.KeyChar == (char) 8)
+            {
+                switch (senderB.Text.Length)
+                {
+                    case 2:
+                        senderB.Text = senderB.Text[0].ToString();
+                        board.SetCell(senderB.TabIndex, board.GetCell(senderB.TabIndex) / 10);
+                        break;
+                    case 1:
+                        senderB.Text = "";
+                        board.SetCell(senderB.TabIndex, 0);
+                        break;
+                    case 0:
+                        break;
+                }
             }
 
             if (board.CheckBoard())
