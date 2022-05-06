@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Menu2.ChineseCrosswordGame
+namespace Menu2.JapaneseCrosswordGame
 {
     /// <summary>
     /// Доска для японского кроссворда
     /// </summary>
-    public class ChineseCrosswordBoard
+    public class JapaneseCrosswordBoard
     {
         // Подсказки о строках кроссворда
         private int[][]? _linesData;
@@ -26,7 +26,7 @@ namespace Menu2.ChineseCrosswordGame
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
-        public ChineseCrosswordBoard()
+        public JapaneseCrosswordBoard()
         {
             _linesData = null;
             _colsData = null;
@@ -40,7 +40,7 @@ namespace Menu2.ChineseCrosswordGame
         /// </summary>
         /// <param name="x">длина стороны x</param>
         /// <param name="y">длина стороны y</param>
-        public ChineseCrosswordBoard(int x, int y)
+        public JapaneseCrosswordBoard(int x, int y)
         {
             _linesData = new int[x][];
             _colsData = new int[y][];
@@ -55,7 +55,7 @@ namespace Menu2.ChineseCrosswordGame
         /// <param name="board">Доска, которую необходимо скопировать</param>
         /// <exception cref="ArgumentNullException">Если <code>board == null</code></exception>
         /// <exception cref="NullReferenceException">Если одно из полей передаваемой доски не инициализировано</exception>
-        public ChineseCrosswordBoard(ChineseCrosswordBoard board)
+        public JapaneseCrosswordBoard(JapaneseCrosswordBoard board)
         {
             if (board == null) throw new ArgumentNullException();
             if (board._linesData == null) throw new NullReferenceException();
@@ -75,7 +75,7 @@ namespace Menu2.ChineseCrosswordGame
         /// </summary>
         /// <param name="data">Разметка будущей доски</param>
         /// <exception cref="ArgumentNullException">Если передано значение null</exception>
-        public ChineseCrosswordBoard(bool[,] data)
+        public JapaneseCrosswordBoard(bool[,] data)
         {
             if (data == null) throw new ArgumentNullException();
             
@@ -465,6 +465,18 @@ namespace Menu2.ChineseCrosswordGame
             }
 
             return builder.ToString();
+        }
+
+        public int[][] GetColsData()
+        {
+            if (_colsData == null) throw new NullReferenceException();
+            return (int[][]) _colsData.Clone();
+        }
+
+        public int[][] GetLinesData()
+        {
+            if (_linesData == null) throw new NullReferenceException();
+            return (int[][]) _linesData.Clone();
         }
     }
 }

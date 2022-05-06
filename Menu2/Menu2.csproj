@@ -53,7 +53,13 @@
     <ItemGroup>
         <Compile Include="Additional classes\RandomBoardFiller.cs" />
         <Compile Include="CButton.cs" />
-        <Compile Include="ChineseCrosswordGame\ChineseCrosswordBoard.cs" />
+        <Compile Include="JapaneseCrosswordGame\JapaneseCrosswordBoard.cs" />
+        <Compile Include="JapanCrossword.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="JapanCrossword.Designer.cs">
+          <DependentUpon>JapanCrossword.cs</DependentUpon>
+        </Compile>
         <Compile Include="Main menu.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -122,6 +128,9 @@
         </Compile>
         <EmbeddedResource Include="Cipher.resx">
           <DependentUpon>Cipher.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="JapanCrossword.resx">
+          <DependentUpon>JapanCrossword.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Main menu.resx">
           <DependentUpon>Main menu.cs</DependentUpon>

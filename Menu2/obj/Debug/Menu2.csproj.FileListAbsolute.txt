@@ -32,3 +32,4 @@ C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.CoreCompile
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.CopyComplete
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.exe
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.pdb
+C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.JapanCrossword.resources

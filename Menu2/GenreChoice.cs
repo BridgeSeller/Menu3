@@ -82,7 +82,10 @@ namespace Menu2
 
         private void japanCrossword_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Hide();
+
+            JapanCrossword japan = new JapanCrossword();
+            japan.Show();
         }
 
         private void GenreChoice_Load(object sender, EventArgs e)
