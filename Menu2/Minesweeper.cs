@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Menu2.Minesweep;
+using Menu2.MinesweeperGame;
 
 namespace Menu2
 {

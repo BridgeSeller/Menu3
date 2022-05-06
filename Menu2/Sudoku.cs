@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using Menu2.Sudok;
+using Menu2.SudokuGame;
 using ContentAlignment = System.Drawing.ContentAlignment;
 
 namespace Menu2
