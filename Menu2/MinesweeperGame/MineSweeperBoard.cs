@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Menu2.Additional_classes;
 
 namespace Menu2.MinesweeperGame
 {
@@ -73,7 +74,22 @@ namespace Menu2.MinesweeperGame
             _sideY = mb._sideY;
             _boardData = (MinesweeperCell[,]) mb._boardData.Clone();
         }
+        
+        public MinesweeperBoard(bool[,] board)
+        {
+            int x = board.GetLength(0);
+            int y = board.GetLength(1);
+            CreateBoard(x,y);
 
+            for (int i = 0; i != x; ++i)
+            {
+                for (int j = 0; j != y; ++j)
+                {
+                    _boardData![i,j].SetMine(board[i,j]);
+                }
+            }
+        }
+        
         /// <summary>
         /// Возвращает индекс поля по его координатам
         /// </summary>
@@ -217,8 +233,7 @@ namespace Menu2.MinesweeperGame
         /// </summary>
         public void RandomFillBoard()
         {
-            int diff = 85;
-            RandomFillBoard(diff);
+            RandomFillBoard((int) Math.Sqrt(_sideX*_sideY));
         }
 
         /// <summary>
@@ -229,21 +244,22 @@ namespace Menu2.MinesweeperGame
         /// <exception cref="ArgumentException">если передан неверный аргумент</exception>
         public void RandomFillBoard(int difficulty)
         {
-            Random rand = new Random();
-            if (_boardData == null) throw new NullReferenceException();
-            if (difficulty < 0 || difficulty > 99) throw new ArgumentException();
-            for (int i = 0; i != _sideX * _sideY; ++i)
+            RandomBoardFiller rand = new RandomBoardFiller(_sideX, _sideY);
+            rand.Generate(difficulty);
+            bool[,] board = rand.GetBoard();
+            for (int i = 0; i != _sideX; ++i)
             {
-                _boardData[i % _sideX, i / _sideX].SetMine(!Convert.ToBoolean(rand.Next(0,100-difficulty)));
+                for (int j = 0; j != _sideY; ++j)
+                {
+                    _boardData![i,j].SetMine(board[i,j]);
+                }
             }
-            Console.WriteLine(this);
-
             CountAdjacentMines();
         }
 
         /// <summary>
         /// 0 - играет на данное поле<br/>
-        /// 1 - меняет значение флага на данном поле
+        /// 1 - устанавливает флаг на данное поле
         /// </summary>
         /// <param name="index">индекс поля</param>
         /// <param name="val">передаваемое значение</param>
@@ -261,8 +277,7 @@ namespace Menu2.MinesweeperGame
                     SeekForMines(index % _sideX, index / _sideX);
                     break;
                 case 1:
-                    _boardData[index % _sideX, index / _sideX].SetFlag(
-                        !_boardData[index % _sideX, index / _sideX].GetFlag());
+                    _boardData[index % _sideX, index / _sideX].SetFlag(!_boardData[index%_sideX,index/_sideX].GetFlag());
                     break;
                 default:
                     throw new ArgumentException();
@@ -271,7 +286,7 @@ namespace Menu2.MinesweeperGame
 
         /// <summary>
         /// 0 - играет на данное поле<br/>
-        /// 1 - меняет значение флага на данном поле
+        /// 1 - устанавливает флаг на данное поле
         /// </summary>
         /// <param name="x">координата X поля</param>
         /// <param name="y">координата Y поля</param>
@@ -542,5 +557,7 @@ namespace Menu2.MinesweeperGame
 
             return builder.ToString();
         }
+
+        
     }
 }

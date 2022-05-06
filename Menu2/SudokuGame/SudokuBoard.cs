@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Menu2.Additional_classes;
 
 namespace Menu2.SudokuGame
 {
@@ -262,13 +263,30 @@ namespace Menu2.SudokuGame
      * </summary>
      * <exception cref="NullReferenceException">если доска не инициализирована</exception>
      */
+
         public void RandomFillBoard()
         {
-            Random rand = new Random();
-            if (_boardData == null) throw new NullReferenceException();
-            for (int i = 0; i != _size * _size; ++i)
+            RandomFillBoard(_size*2);
+        }
+        public void RandomFillBoard(int a)
+        {
+            SudokuBoardGenerator generator = new SudokuBoardGenerator(_size);
+            generator.GenerateStable();
+            _boardData = generator.ToFullSudokuBoard();
+
+            RandomBoardFiller boardFiller = new RandomBoardFiller(_size, _size);
+            boardFiller.Generate(a);
+            bool[,] mask = boardFiller.GetBoard();
+
+            for (int i = 0; i != _size; ++i)
             {
-                _boardData[i % _size, i / _size] = rand.Next(1, _size + 1);
+                for (int j = 0; j != _size; ++j)
+                {
+                    if (mask[i, j])
+                    {
+                        _boardData[i, j] = 0;
+                    }
+                }
             }
         }
 

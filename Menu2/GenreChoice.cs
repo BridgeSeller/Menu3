@@ -80,7 +80,7 @@ namespace Menu2
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void japanCrossword_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }
@@ -95,6 +95,11 @@ namespace Menu2
             this.Hide();
             Form1 Menu = new Form1();
             Menu.Show();
+        }
+
+        private void soloChess_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

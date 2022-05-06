@@ -172,6 +172,7 @@ namespace Menu2
             this.button3.TabIndex = 13;
             this.button3.Text = "Solo Chess";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.soloChess_Click);
             // 
             // button4
             // 
@@ -182,9 +183,9 @@ namespace Menu2
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 93);
             this.button4.TabIndex = 14;
-            this.button4.Text = "Chinese Crossword\r\n";
+            this.button4.Text = "Japaniese Crossword\r\n";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.japanCrossword_Click);
             // 
             // ticTacToeButton
             // 
