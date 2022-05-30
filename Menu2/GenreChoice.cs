@@ -80,9 +80,12 @@ namespace Menu2
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void japanCrossword_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Hide();
+
+            JapanCrossword japan = new JapanCrossword();
+            japan.Show();
         }
 
         private void GenreChoice_Load(object sender, EventArgs e)
@@ -95,6 +98,11 @@ namespace Menu2
             this.Hide();
             Form1 Menu = new Form1();
             Menu.Show();
+        }
+
+        private void soloChess_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

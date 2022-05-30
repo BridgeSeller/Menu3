@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Menu2.Minesweep;
+using Menu2.MinesweeperGame;
 
 namespace Menu2
 {
@@ -19,7 +19,7 @@ namespace Menu2
     private void Form1_Load(object sender, EventArgs e)
     {
       board = new MinesweeperBoard(8,8);
-      board.RandomFillBoard(85);
+      board.RandomFillBoard(20);
       for (int i = 0; i != board.GetXSide(); ++i)
       {
         for (int j = 0; j != board.GetYSide(); ++j)

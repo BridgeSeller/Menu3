@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using Menu2.Sudok;
+using Menu2.SudokuGame;
 using ContentAlignment = System.Drawing.ContentAlignment;
 
 namespace Menu2
@@ -17,29 +17,6 @@ namespace Menu2
     {
         private int scale;
         private SudokuBoard? board;
-
-        private int[,] data6 =
-        {
-            {6, 2, 1, 4, 3, 5},
-            {1, 3, 5, 2, 4, 6},
-            {5, 4, 3, 6, 1, 2},
-            {3, 1, 6, 5, 2, 4},
-            {4, 5, 2, 1, 6, 3},
-            {2, 6, 4, 3, 5, 1}
-        };
-
-        private int[,] data9 =
-        {
-            {4, 7, 8, 1, 9, 3, 5, 6, 2},
-            {2, 9, 1, 8, 6, 5, 4, 7, 3},
-            {6, 3, 5, 4, 7, 2, 8, 9, 1},
-            {8, 1, 7, 6, 2, 4, 9, 3, 5},
-            {9, 2, 4, 5, 3, 7, 1, 8, 6},
-            {5, 6, 3, 9, 1, 8, 7, 2, 4},
-            {3, 4, 6, 7, 8, 1, 2, 5, 9},
-            {7, 5, 9, 2, 4, 6, 3, 1, 8},
-            {1, 8, 2, 3, 5, 9, 6, 4, 7}
-        };
 
         private Button[,]? allButtons;
 
@@ -51,8 +28,9 @@ namespace Menu2
         private void Form3_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
-
-            board = new SudokuBoard(data9);
+            
+            board = new SudokuBoard(12);
+            board.RandomFillBoard(1);
 
             Size = new Size(360, 500);
             scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / board.GetSize();
@@ -67,10 +45,9 @@ namespace Menu2
                     Button button = new Button();
                     button.Location = new Point(10 + scale * j, 10 + scale * i);
                     button.Size = new Size(scale, scale);
-                    if (rand.Next(0, 3) == 0)
+                    if (board.GetCell(i,j)==0)
                     {
                         button.Text = "";
-                        board.SetCell(i, j, 0);
                     }
                     else
                     {
@@ -78,6 +55,8 @@ namespace Menu2
                         button.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
                         button.Tag = "Locked";
                     }
+
+                    button.TabIndex = i + j * board.GetSize();
 
                     allButtons[j, i] = button;
                     Controls.Add(button);
@@ -106,10 +85,29 @@ namespace Menu2
         {
             Button senderB = (Button) sender;
             if ((string) senderB.Tag == "Locked") return;
-            if (e.KeyChar >= '1' && e.KeyChar <= '9')
+            if (e.KeyChar >= '0' && e.KeyChar <= '9')
             {
-                senderB.Text = e.KeyChar.ToString();
-                board.SetCell(senderB.TabIndex, e.KeyChar - 48);
+                if (senderB.Text == "" && e.KeyChar == '0') return;
+                if ((board.GetCell(senderB.TabIndex) * 10 + e.KeyChar - 48) > board.GetSize()) return;
+                
+                senderB.Text += e.KeyChar.ToString();
+                board.SetCell(senderB.TabIndex, board.GetCell(senderB.TabIndex) * 10 + e.KeyChar - 48);
+            }
+            else if (e.KeyChar == (char) 8)
+            {
+                switch (senderB.Text.Length)
+                {
+                    case 2:
+                        senderB.Text = senderB.Text[0].ToString();
+                        board.SetCell(senderB.TabIndex, board.GetCell(senderB.TabIndex) / 10);
+                        break;
+                    case 1:
+                        senderB.Text = "";
+                        board.SetCell(senderB.TabIndex, 0);
+                        break;
+                    case 0:
+                        break;
+                }
             }
 
             if (board.CheckBoard())
