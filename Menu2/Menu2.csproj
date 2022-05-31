@@ -53,6 +53,12 @@
     <ItemGroup>
         <Compile Include="Additional classes\RandomBoardFiller.cs" />
         <Compile Include="CButton.cs" />
+        <Compile Include="Chess.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Chess.Designer.cs">
+          <DependentUpon>Chess.cs</DependentUpon>
+        </Compile>
         <Compile Include="JapaneseCrosswordGame\JapaneseCrosswordBoard.cs" />
         <Compile Include="JapanCrossword.cs">
           <SubType>Form</SubType>
@@ -126,6 +132,9 @@
         <Compile Include="TicTacToe1.Designer.cs">
           <DependentUpon>TicTacToe1.cs</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Chess.resx">
+          <DependentUpon>Chess.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Cipher.resx">
           <DependentUpon>Cipher.cs</DependentUpon>
         </EmbeddedResource>

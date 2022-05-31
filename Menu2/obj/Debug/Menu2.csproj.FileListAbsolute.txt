@@ -33,3 +33,4 @@ C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.CopyComplet
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.exe
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.pdb
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.JapanCrossword.resources
+C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Chess.resources

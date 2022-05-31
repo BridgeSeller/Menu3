@@ -102,7 +102,9 @@ namespace Menu2
 
         private void soloChess_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Hide();
+            Chess chess = new Chess();
+            chess.Show();
         }
     }
 }

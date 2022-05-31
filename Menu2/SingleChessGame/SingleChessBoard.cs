@@ -540,6 +540,8 @@ namespace Menu2.SingleChessGame
             if (x < 0 || y < 0) throw new ArgumentOutOfRangeException();
             if (x > 7 || y > 7) throw new ArgumentOutOfRangeException();
 
+
+            if (!_boardData[x, y].IsOccupied()) return;
             // Если никакое поле не выбрано
             if (_selectedSquare == null) return;
             // Если на выбранном поле нет фигуры
@@ -615,6 +617,7 @@ namespace Menu2.SingleChessGame
         /// </summary>
         public void HistoryBackward()
         {
+            if (_history.Count == 0) return;
             ReceiveBoard();
         }
 
@@ -638,6 +641,31 @@ namespace Menu2.SingleChessGame
             }
 
             return builder.ToString();
+        }
+
+        public SingleChessBoard(CoordinatePiece[] dataArray)
+        {
+            _boardData = new SingleChessSquare[8, 8];
+            for (int i = 0; i != 8; ++i)
+            {
+                for (int j = 0; j != 8; ++j)
+                {
+                    _boardData[i, j] = new SingleChessSquare(j + 1, 8 - i);
+                }
+            }
+
+            _selectedSquare = null;
+            _history = new Stack<CoordinatePiece[]>();
+            
+            foreach (var i in dataArray)
+            {
+                _boardData[i.GetX(), i.GetY()].SetPiece(i.GetPiece());
+            }
+        }
+
+        public bool IsASquareSelected()
+        {
+            return (_selectedSquare != null);
         }
     }
 }
