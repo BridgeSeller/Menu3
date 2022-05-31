@@ -59,6 +59,7 @@
         <Compile Include="Chess.Designer.cs">
           <DependentUpon>Chess.cs</DependentUpon>
         </Compile>
+        <Compile Include="JapaneseCrosswordGame\CrosswordLevelLayout.cs" />
         <Compile Include="JapaneseCrosswordGame\JapaneseCrosswordBoard.cs" />
         <Compile Include="JapanCrossword.cs">
           <SubType>Form</SubType>
@@ -87,6 +88,7 @@
         <Compile Include="MinesweeperGame\AdjacentMinesCounter.cs" />
         <Compile Include="MinesweeperGame\MineSweeperBoard.cs" />
         <Compile Include="MinesweeperGame\MineSweeperCell.cs" />
+        <Compile Include="MinesweeperGame\MinesweeperLevelLayout.cs" />
         <Compile Include="Options.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -114,6 +116,7 @@
         <Compile Include="CipherTip.Designer.cs">
           <DependentUpon>CipherTip.cs</DependentUpon>
         </Compile>
+        <Compile Include="SingleChessGame\ChessLevelLayout.cs" />
         <Compile Include="SingleChessGame\coordinatePiece.cs" />
         <Compile Include="SingleChessGame\SingleChessBoard.cs" />
         <Compile Include="SingleChessGame\SingleChessPiece.cs" />
@@ -126,6 +129,7 @@
         </Compile>
         <Compile Include="SudokuGame\SudokuBoard.cs" />
         <Compile Include="SudokuGame\SudokuBoardGenerator.cs" />
+        <Compile Include="SudokuGame\SudokuLevelLayout.cs" />
         <Compile Include="TicTacToe1.cs">
           <SubType>Form</SubType>
         </Compile>
