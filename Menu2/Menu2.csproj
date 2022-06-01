@@ -51,7 +51,28 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Additional classes\RandomBoardFiller.cs" />
         <Compile Include="CButton.cs" />
+        <Compile Include="Chess.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Chess.Designer.cs">
+          <DependentUpon>Chess.cs</DependentUpon>
+        </Compile>
+        <Compile Include="JapaneseCrosswordGame\CrosswordLevelLayout.cs" />
+        <Compile Include="JapaneseCrosswordGame\JapaneseCrosswordBoard.cs" />
+        <Compile Include="JapanCrossword.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="JapanCrossword.Designer.cs">
+          <DependentUpon>JapanCrossword.cs</DependentUpon>
+        </Compile>
+        <Compile Include="LevelSelectorTele.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="LevelSelectorTele.Designer.cs">
+          <DependentUpon>LevelSelectorTele.cs</DependentUpon>
+        </Compile>
         <Compile Include="Main menu.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -70,9 +91,10 @@
         <Compile Include="Minesweeper.Designer.cs">
           <DependentUpon>Minesweeper.cs</DependentUpon>
         </Compile>
-        <Compile Include="Minesweep\AdjacentMinesCounter.cs" />
-        <Compile Include="Minesweep\MineSweeperBoard.cs" />
-        <Compile Include="Minesweep\MineSweeperCell.cs" />
+        <Compile Include="MinesweeperGame\AdjacentMinesCounter.cs" />
+        <Compile Include="MinesweeperGame\MineSweeperBoard.cs" />
+        <Compile Include="MinesweeperGame\MineSweeperCell.cs" />
+        <Compile Include="MinesweeperGame\MinesweeperLevelLayout.cs" />
         <Compile Include="Options.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -100,21 +122,37 @@
         <Compile Include="CipherTip.Designer.cs">
           <DependentUpon>CipherTip.cs</DependentUpon>
         </Compile>
+        <Compile Include="SingleChessGame\ChessLevelLayout.cs" />
+        <Compile Include="SingleChessGame\coordinatePiece.cs" />
+        <Compile Include="SingleChessGame\SingleChessBoard.cs" />
+        <Compile Include="SingleChessGame\SingleChessPiece.cs" />
+        <Compile Include="SingleChessGame\SingleChessSquare.cs" />
         <Compile Include="Sudoku.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="Sudoku.Designer.cs">
           <DependentUpon>Sudoku.cs</DependentUpon>
         </Compile>
-        <Compile Include="Sudok\SudokuBoard.cs" />
+        <Compile Include="SudokuGame\SudokuBoard.cs" />
+        <Compile Include="SudokuGame\SudokuBoardGenerator.cs" />
+        <Compile Include="SudokuGame\SudokuLevelLayout.cs" />
         <Compile Include="TicTacToe1.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="TicTacToe1.Designer.cs">
           <DependentUpon>TicTacToe1.cs</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Chess.resx">
+          <DependentUpon>Chess.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Cipher.resx">
           <DependentUpon>Cipher.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="JapanCrossword.resx">
+          <DependentUpon>JapanCrossword.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="LevelSelectorTele.resx">
+          <DependentUpon>LevelSelectorTele.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Main menu.resx">
           <DependentUpon>Main menu.cs</DependentUpon>

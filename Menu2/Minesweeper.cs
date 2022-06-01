@@ -1,25 +1,30 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Menu2.Minesweep;
+using Menu2.MinesweeperGame;
 
 namespace Menu2
 {
   public partial class Form2 : Form
   {
     private MinesweeperBoard board;
-    private Button[,] allButtons = new Button[8,8];
+    private Button[,] allButtons;
     private int scale = 35;
+
+    private int level;
     
-    public Form2()
+    public Form2(int lvl)
     {
+      level = lvl;
       InitializeComponent();
     }
 
     private void Form1_Load(object sender, EventArgs e)
     {
-      board = new MinesweeperBoard(8,8);
-      board.RandomFillBoard(85);
+      int[] diff = MinesweeperLevelLayout.GetLevel(level);
+      board = new MinesweeperBoard(diff[0],diff[1]);
+      board.RandomFillBoard(diff[2]);
+      allButtons = new Button[diff[0],diff[1]];
       for (int i = 0; i != board.GetXSide(); ++i)
       {
         for (int j = 0; j != board.GetYSide(); ++j)
@@ -90,7 +95,7 @@ namespace Menu2
     {
       Button senderB = (Button) sender;
       board.RecreateBoard(8);
-      board.RandomFillBoard();
+      board.RandomFillBoard(level);
       for (int i = 0; i != board.GetXSide(); ++i)
       {
         for (int j = 0; j != board.GetYSide(); ++j)
