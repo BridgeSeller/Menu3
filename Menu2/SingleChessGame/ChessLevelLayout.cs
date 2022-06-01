@@ -14,7 +14,7 @@ namespace Menu2.SingleChessGame
             new[]
             {
                 new CoordinatePiece(0,0,new SingleChessPiece('B')),
-                new CoordinatePiece(7,4,new SingleChessPiece('Q'))
+                new CoordinatePiece(4,4,new SingleChessPiece('Q'))
             },
             new[]
             {

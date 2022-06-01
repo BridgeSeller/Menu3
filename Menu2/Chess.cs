@@ -10,23 +10,18 @@ namespace Menu2
         private SingleChessBoard board;
         private Button[,] allButtons;
         private int scale = 40;
+        private int level;
 
-        private CoordinatePiece[] data1 = new CoordinatePiece[]
+        public Chess(int lvl)
         {
-            new CoordinatePiece(0,0,new SingleChessPiece('Q')),
-            new CoordinatePiece(7,0,new SingleChessPiece('B')),
-            new CoordinatePiece(0,7,new SingleChessPiece('R'))
-        };
-        
-        public Chess()
-        {
+            level = lvl;
             InitializeComponent();
         }
 
         private void Chess_Load(object sender, EventArgs e)
         {
             allButtons = new Button[8,8];
-            board = new SingleChessBoard(data1);
+            board = new SingleChessBoard(ChessLevelLayout.GetLevel(level));
 
             for (int i = 0; i != board.GetXSide(); ++i)
             {

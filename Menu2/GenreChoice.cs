@@ -20,21 +20,17 @@ namespace Menu2
         private void sudokuButton_Click(object sender, EventArgs e)
         {
             this.Close();
-
-            Form3 third = new Form3();
-            third.Show();
+            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            levels.Show();
         }
 
 
         private void mineButton_Click(object sender, EventArgs e)
         {
             this.Close();
-
-            Form2 seco = new Form2();
-            seco.Show();
+            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            levels.Show();
         }
-
-
 
         private void lockButton_Click(object sender, EventArgs e)
         {
@@ -46,17 +42,6 @@ namespace Menu2
             this.Close();
             FormTic tic = new FormTic();
             tic.Show();
-
-        }
-
-        private void wordleButton_Click(object sender, EventArgs e)
-        {
-            //throw new System.NotImplementedException();
-        }
-
-        private void crosswordButton_Click(object sender, EventArgs e)
-        {
-            //throw new System.NotImplementedException();
         }
 
         private void sequenceButton_Click(object sender, EventArgs e)
@@ -82,10 +67,9 @@ namespace Menu2
 
         private void japanCrossword_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            JapanCrossword japan = new JapanCrossword();
-            japan.Show();
+            this.Close();
+            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            levels.Show();
         }
 
         private void GenreChoice_Load(object sender, EventArgs e)
@@ -102,9 +86,9 @@ namespace Menu2
 
         private void soloChess_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Chess chess = new Chess();
-            chess.Show();
+            this.Close();
+            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            levels.Show();
         }
     }
 }

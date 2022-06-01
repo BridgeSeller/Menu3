@@ -18,19 +18,23 @@ namespace Menu2
         private int scale;
         private SudokuBoard? board;
 
+        private int level;
+
         private Button[,]? allButtons;
 
-        public Form3()
+        public Form3(int lvl)
         {
+            level = lvl;
             InitializeComponentt();
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
+            int[] diff = SudokuLevelLayout.GetLevel(level);
             
-            board = new SudokuBoard(12);
-            board.RandomFillBoard(1);
+            board = new SudokuBoard(diff[0]);
+            board.RandomFillBoard(diff[1]);
 
             Size = new Size(360, 500);
             scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / board.GetSize();
@@ -152,7 +156,7 @@ namespace Menu2
         private void ResetButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 second = new Form3();
+            Form3 second = new Form3(level);
             second.Show();
         }
 

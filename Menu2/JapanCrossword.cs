@@ -10,26 +10,20 @@ namespace Menu2
     {
         private int scale;
         private JapaneseCrosswordBoard board;
-        
+
         private Button[,] allButtons;
 
-        private bool[,] data10_5 =
-        {
-            {true, false, true, false, false, false, true, false, true, false},
-            {true, true, true, true, false, false, true, true, true, true},
-            {false, false, false, false, false, false, false, false, false, false},
-            {false, false, false, false, false, false, false, false, false, false},
-            {false, false, false, false, false, false, false, false, false, false}
-        };
+        private int level;
         
-        public JapanCrossword()
+        public JapanCrossword(int lvl)
         {
+            level = lvl;
             InitializeComponent();
         }
 
         private void JapanCrossword_Load(object sender, EventArgs e)
         {
-            board = new JapaneseCrosswordBoard(data10_5);
+            board = new JapaneseCrosswordBoard(CrosswordLevelLayout.GetLevel(level));
             
             Size = new Size(800, 500);
             scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / Math.Max(board.GetSideX(), board.GetSideY());

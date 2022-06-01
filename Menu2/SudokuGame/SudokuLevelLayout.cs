@@ -8,7 +8,7 @@
         };
         private static readonly int[] Count = new int[]
         {
-            3,4,8,6,9,13,24,40,58,63,198
+            3,4,8,6,9,13,20,25,30,40,60
         };
 
         public static int[] GetLevel(int lvl)

@@ -266,7 +266,7 @@ namespace Menu2.SudokuGame
 
         public void RandomFillBoard()
         {
-            RandomFillBoard(_size*2);
+            RandomFillBoard(_size);
         }
         public void RandomFillBoard(int a)
         {

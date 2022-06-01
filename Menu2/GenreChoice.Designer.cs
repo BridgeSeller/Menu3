@@ -84,7 +84,6 @@ namespace Menu2
             this.wordleButton.TabIndex = 5;
             this.wordleButton.Text = "Wordle";
             this.wordleButton.UseVisualStyleBackColor = false;
-            this.wordleButton.Click += new System.EventHandler(this.wordleButton_Click);
             // 
             // sequenceButton
             // 
@@ -134,7 +133,6 @@ namespace Menu2
             this.crosswordButton.TabIndex = 9;
             this.crosswordButton.Text = "Placeholder";
             this.crosswordButton.UseVisualStyleBackColor = false;
-            this.crosswordButton.Click += new System.EventHandler(this.crosswordButton_Click);
             // 
             // mineButton
             // 
