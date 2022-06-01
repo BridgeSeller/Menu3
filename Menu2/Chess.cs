@@ -21,25 +21,45 @@ namespace Menu2
 
         private void Chess_Load(object sender, EventArgs e)
         {
+            this.Width = scale * 14 + 20;
+            this.Height = scale * 12 + 20;
+            
+            this.BackColor = Color.FromArgb(40,40,50);
+            
+            exitButton = new Button();
+            exitButton.Location = new Point(10, 10);
+            exitButton.Size = new Size(2 * scale, scale);
+            exitButton.Text = "Назад";
+            exitButton.TabIndex = 0;
+            exitButton.BackColor = Color.FromArgb(255, 180, 107, 21);
+            exitButton.ForeColor = Color.Bisque;
+            exitButton.FlatStyle = FlatStyle.Flat;
+            exitButton.MouseClick += new MouseEventHandler(exit_Click);
+            Controls.Add(exitButton);
+
             allButtons = new Button[8,8];
             board = new SingleChessBoard(ChessLevelLayout.GetLevel(level));
 
+            int[] offset = {scale * 2, scale};
+            
             for (int i = 0; i != board.GetXSide(); ++i)
             {
                 Label label = new Label();
-                label.Location = new Point(10, scale + scale * i + 10);
+                label.Location = new Point(offset[0]+10, offset[1]+scale + scale * i + 10);
                 label.Size = new Size(scale, scale);
                 label.Text = board.GetSquare(i, 0).GetCoordinates()[1].ToString();
                 label.TextAlign = ContentAlignment.MiddleCenter;
+                label.ForeColor = Color.FromArgb(156, 180, 107, 21);
                 Controls.Add(label);
             }
             for (int i = 0; i != board.GetXSide(); ++i)
             {
                 Label label = new Label();
-                label.Location = new Point(scale + scale * i + 10, scale + 10 + scale * 8);
+                label.Location = new Point(offset[0]+scale + scale * i + 10, offset[1]+scale + 10 + scale * 8);
                 label.Size = new Size(scale, scale);
                 label.Text = board.GetSquare(0, i).GetCoordinates()[0].ToString();
                 label.TextAlign = ContentAlignment.MiddleCenter;
+                label.ForeColor = Color.FromArgb(156, 180, 107, 21);
                 Controls.Add(label);
             }
             
@@ -48,13 +68,14 @@ namespace Menu2
                 for (int j = 0; j != board.GetYSide(); ++j)
                 {
                     Button button = new Button();
-                    button.Location = new Point(10+scale+scale*j, 10+scale+scale*i);
+                    button.Location = new Point(offset[0]+10+scale+scale*j, offset[1]+10+scale+scale*i);
                     button.Size = new Size(scale, scale);
                     button.Text = board.GetSquare(i,j).ToString();
                     button.BackColor = board.GetSquare(i, j).GetColor() == 'B'
-                        ? Color.FromArgb(255, 136, 69, 17)
-                        : Color.FromArgb(156, 180, 107, 21);
+                        ? Color.SaddleBrown
+                        : Color.Peru;
                     button.ForeColor = Color.Bisque;
+                    button.FlatStyle = FlatStyle.Flat;
                     button.TabIndex = i * board.GetXSide() + j + 30;
                     allButtons[i, j] = button;
                     Controls.Add(button);
@@ -62,6 +83,13 @@ namespace Menu2
                     button.KeyPress += new KeyPressEventHandler(back_Click);
                 }
             }
+        }
+
+        private void exit_Click(object sender, MouseEventArgs e)
+        {
+            this.Close();
+            LevelSelectorTele levelSelector = new LevelSelectorTele('C', 10);
+            levelSelector.Show();
         }
 
         private void back_Click(object sender, KeyPressEventArgs e)
