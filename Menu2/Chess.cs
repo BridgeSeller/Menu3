@@ -9,6 +9,7 @@ namespace Menu2
     {
         private SingleChessBoard board;
         private Button[,] allButtons;
+        private Button exitButton;
         private int scale = 40;
         private int level;
 
