@@ -28,7 +28,7 @@ namespace Menu2
         private void mineButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            LevelSelectorTele levels = new LevelSelectorTele('M', 10);
             levels.Show();
         }
 
@@ -68,7 +68,7 @@ namespace Menu2
         private void japanCrossword_Click(object sender, EventArgs e)
         {
             this.Close();
-            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            LevelSelectorTele levels = new LevelSelectorTele('J', 15);
             levels.Show();
         }
 
@@ -87,7 +87,7 @@ namespace Menu2
         private void soloChess_Click(object sender, EventArgs e)
         {
             this.Close();
-            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            LevelSelectorTele levels = new LevelSelectorTele('C', 10);
             levels.Show();
         }
     }
