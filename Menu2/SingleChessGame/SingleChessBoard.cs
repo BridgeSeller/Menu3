@@ -411,12 +411,12 @@ namespace Menu2.SingleChessGame
         {
             if (x - 2 >= 0 && y - 1 >= 0) _boardData[x - 2, y - 1].MarkSquare(a);
             if (x - 1 >= 0 && y - 2 >= 0) _boardData[x - 1, y - 2].MarkSquare(a);
-            if (x + 2 < 7 && y + 1 < 7) _boardData[x + 2, y + 1].MarkSquare(a);
-            if (x + 1 < 7 && y + 2 < 7) _boardData[x + 1, y + 2].MarkSquare(a);
-            if (x - 2 >= 0 && y + 1 < 7) _boardData[x - 2, y + 1].MarkSquare(a);
-            if (x + 1 < 7 && y - 2 >= 0) _boardData[x + 1, y - 2].MarkSquare(a);
-            if (x + 2 < 7 && y - 1 >= 0) _boardData[x + 2, y - 1].MarkSquare(a);
-            if (x - 1 >= 0 && y + 2 < 7) _boardData[x - 1, y + 2].MarkSquare(a);
+            if (x + 2 <= 7 && y + 1 <= 7) _boardData[x + 2, y + 1].MarkSquare(a);
+            if (x + 1 <= 7 && y + 2 <= 7) _boardData[x + 1, y + 2].MarkSquare(a);
+            if (x - 2 >= 0 && y + 1 <= 7) _boardData[x - 2, y + 1].MarkSquare(a);
+            if (x + 1 <= 7 && y - 2 >= 0) _boardData[x + 1, y - 2].MarkSquare(a);
+            if (x + 2 <= 7 && y - 1 >= 0) _boardData[x + 2, y - 1].MarkSquare(a);
+            if (x - 1 >= 0 && y + 2 <= 7) _boardData[x - 1, y + 2].MarkSquare(a);
         }
 
         /// <summary>

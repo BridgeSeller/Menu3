@@ -21,6 +21,7 @@ namespace Menu2
         private int level;
 
         private Button[,]? allButtons;
+        private Button exit;
 
         public Form3(int lvl)
         {
@@ -30,15 +31,30 @@ namespace Menu2
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            Random rand = new Random();
+            BackgroundImage = Image.FromFile("Back6.png");
+            BackgroundImageLayout = ImageLayout.Stretch;
             int[] diff = SudokuLevelLayout.GetLevel(level);
-            
             board = new SudokuBoard(diff[0]);
             board.RandomFillBoard(diff[1]);
-
+            
+            
             Size = new Size(360, 500);
-            scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / board.GetSize();
+            scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / (board.GetSize()+3);
             if (scale < 10) scale = 10;
+            
+            exit = new Button();
+            exit.TabIndex = 500;
+            exit.Size = new Size((int) (scale*2),scale);
+            exit.Location = new Point(10, 10);
+            exit.Text = "Назад";
+            exit.FlatStyle = FlatStyle.Flat;
+            exit.BackColor = Color.FromArgb(255, 200, 218, 110);
+            exit.ForeColor = Color.FromArgb(255, 51, 76, 8);
+            exit.Font = new Font("Bahnschrift Light", 12, FontStyle.Bold);
+            exit.MouseClick += new MouseEventHandler(exit_Click);
+            Controls.Add(exit);
+
+            int[] offset = {(int) (scale * 2.5), scale};
 
             allButtons = new Button[board.GetXSide(), board.GetYSide()];
 
@@ -47,8 +63,9 @@ namespace Menu2
                 for (int j = 0; j != board.GetYSide(); ++j)
                 {
                     Button button = new Button();
-                    button.Location = new Point(10 + scale * j, 10 + scale * i);
+                    button.Location = new Point(offset[0]+10 + scale * j, offset[1]+10 + scale * i);
                     button.Size = new Size(scale, scale);
+                    button.FlatStyle = FlatStyle.Flat;
                     if (board.GetCell(i,j)==0)
                     {
                         button.Text = "";
@@ -69,20 +86,14 @@ namespace Menu2
             }
 
             SizeChanged += new EventHandler(SizeChangedForm3);
+            
+        }
 
-            Button resetButton = new Button();
-            resetButton.Location = new Point(10 + scale * 2, 30 + scale * 10);
-            resetButton.Size = new Size(scale * 2, scale);
-            resetButton.Text = "Reset";
-            Controls.Add(resetButton);
-            resetButton.Click += new EventHandler(ResetButton_Click);
-
-            Button genre = new Button();
-            genre.Location = new Point(10 + scale * 4, 30 + scale * 10);
-            genre.Size = new Size(scale * 2, scale);
-            genre.Text = "Genre choice";
-            Controls.Add(genre);
-            genre.Click += new EventHandler(ReturnToLevels_Click);
+        private void exit_Click(object sender, MouseEventArgs e)
+        {
+            this.Close();
+            LevelSelectorTele levelSelector = new LevelSelectorTele('S', 11);
+            levelSelector.Show();
         }
 
         private void TextEdited(object sender, KeyPressEventArgs e)
@@ -122,14 +133,18 @@ namespace Menu2
 
         private void SizeChangedForm3(object sender, EventArgs e)
         {
-            scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / board.GetSize();
+            scale = (Math.Min(Size.Height - 50, Size.Width - 30)) / (board.GetSize()+3);
             if (scale < 10) scale = 10;
+
+            exit.Size = new Size(scale * 2, scale);
+            
+            int[] offset = {(int) (scale * 2.5), scale};
 
             for (int i = 0; i != board.GetXSide(); ++i)
             {
                 for (int j = 0; j != board.GetYSide(); ++j)
                 {
-                    allButtons[i, j].Location = new Point(10 + scale * j, 10 + scale * i);
+                    allButtons[i, j].Location = new Point(offset[0] + 10 + scale * j, offset[1] + 10 + scale * i);
                     allButtons[i, j].Size = new Size(scale, scale);
                 }
             }
@@ -141,37 +156,14 @@ namespace Menu2
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.SuspendLayout();
             // 
             // Form3
             // 
-            this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(348, 288);
             this.Name = "Form3";
             this.ResumeLayout(false);
-        }
-
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form3 second = new Form3(level);
-            second.Show();
-        }
-
-        private void ReturnToLevels_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            GenreChoice second = new GenreChoice();
-            second.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            GenreChoice genre = new GenreChoice();
-            genre.Show();
         }
     }
 }

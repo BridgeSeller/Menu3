@@ -115,6 +115,7 @@ namespace Menu2
         private void Size_Change(object sender, EventArgs e)
         {
             scale = Math.Min((Width - 20) / 14, (Height - 20) / 12);
+            if (scale < 10) scale = 10;
             int[] offset = {scale * 2, scale};
             for (int i = 0; i < board.GetXSide(); i++)
             {
