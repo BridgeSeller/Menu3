@@ -20,7 +20,7 @@ namespace Menu2
         private void sudokuButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            LevelSelectorTele levels = new LevelSelectorTele('S', 10);
+            LevelSelectorTele levels = new LevelSelectorTele('S', 11);
             levels.Show();
         }
 

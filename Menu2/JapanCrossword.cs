@@ -40,6 +40,7 @@ namespace Menu2
             exit.Text = "Назад";
             exit.FlatStyle = FlatStyle.Flat;
             exit.BackColor = Color.FromArgb(255, 154, 190, 255);
+            exit.ForeColor = Color.FromArgb(255, 62, 85, 126);
             exit.Font = new Font("Bahnschrift Light", 12, FontStyle.Bold);
             exit.MouseClick += new MouseEventHandler(Exit_Click);
             Controls.Add(exit);
