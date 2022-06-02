@@ -23,7 +23,6 @@ namespace Menu2
             level = lvl;
             InitializeComponent();
         }
-
         private void JapanCrossword_Load(object sender, EventArgs e)
         {
             BackgroundImage = Image.FromFile("Back5.png");

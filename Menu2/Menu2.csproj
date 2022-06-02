@@ -59,6 +59,12 @@
         <Compile Include="Chess.Designer.cs">
           <DependentUpon>Chess.cs</DependentUpon>
         </Compile>
+        <Compile Include="CipherRebusLevels.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="CipherRebusLevels.Designer.cs">
+          <DependentUpon>CipherRebusLevels.cs</DependentUpon>
+        </Compile>
         <Compile Include="JapaneseCrosswordGame\CrosswordLevelLayout.cs" />
         <Compile Include="JapaneseCrosswordGame\JapaneseCrosswordBoard.cs" />
         <Compile Include="JapanCrossword.cs">

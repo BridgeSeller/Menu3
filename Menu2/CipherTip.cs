@@ -25,6 +25,7 @@ namespace Menu2
             pictureBox.Location = new Point(0, 0);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Size = new Size(scale, scale/2);
+            
             Image = new Bitmap(FormS.directory + @"Resources\azb.png");
             pictureBox.Image = (Image) Image;
             picture = pictureBox;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Menu2
@@ -53,15 +54,15 @@ namespace Menu2
         {
             this.Close();
 
-            FormS cipher = new FormS();
-            cipher.Show();
+            LevelCR levels = new LevelCR('C', 10);
+            levels.Show();
         }
 
         private void rebusLetter_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormR rebus = new FormR();
-            rebus.Show();
+            LevelCR levels = new LevelCR('R', 10);
+            levels.Show();
 
         }
 
@@ -89,6 +90,24 @@ namespace Menu2
             this.Close();
             LevelSelectorTele levels = new LevelSelectorTele('C', 10);
             levels.Show();
+        }
+
+        private void Exchange(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void sequenceButton_MouseEnter(object sender, EventArgs e)
+        {
+            if (sequenceButton.Location == new Point(600, 370))
+            {
+                sequenceButton.Location = new Point(500, 370);
+            }
+            else
+            {
+                sequenceButton.Location = new Point(600, 370);
+            }
         }
     }
 }
