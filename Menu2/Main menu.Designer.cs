@@ -30,29 +30,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
             this.roundButton1 = new Menu2.RoundButton();
             this.roundButton2 = new Menu2.RoundButton();
             this.roundButton3 = new Menu2.RoundButton();
             this.roundButton4 = new Menu2.RoundButton();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
-            this.label1.Image = ((System.Drawing.Image) (resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(144, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(404, 135);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Puzzlerama";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // roundButton1
             // 
@@ -152,7 +134,6 @@
             this.Controls.Add(this.roundButton3);
             this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.roundButton1);
-            this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.Text = "Main menu";
@@ -167,8 +148,6 @@
         private Menu2.RoundButton roundButton2;
 
         private Menu2.RoundButton roundButton1;
-
-        private System.Windows.Forms.Label label1;
 
         #endregion
     }
