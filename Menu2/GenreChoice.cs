@@ -125,7 +125,7 @@ namespace Menu2
         private void size_Changed(object sender, EventArgs e)
         {
             scale = (Math.Min((Size.Height - 50) / 40, (Size.Width - 30) / 68));
-            If(scale<1) scale=1;
+            if(scale<1) scale=1;
             sudokuButton.Size = new Size(scale * 12, scale * 10);
             sudokuButton.Location = new Point(100, 60+12*scale);
             
