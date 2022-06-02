@@ -4,7 +4,7 @@
     {
         private static readonly int[] SideX = new int[]
         {
-            8,10,20,10,16,18,20,24,30,36,1
+            8,10,10,10,16,18,20,24,30,36,1
         };
         private static readonly int[] SideY = new int[]
         {
@@ -12,7 +12,7 @@
         };
         private static readonly int[] Count = new int[]
         {
-            3,6,13,14,30,40,70,100,130,160,1
+            3,6,10,14,30,40,70,100,130,160,1
         };
 
         public static int[] GetLevel(int lvl)
