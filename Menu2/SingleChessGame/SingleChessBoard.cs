@@ -316,11 +316,11 @@ namespace Menu2.SingleChessGame
             if (x != 0 && y != 0) _boardData[x - 1, y - 1].MarkSquare(a);
             if (x != 0) _boardData[x - 1, y].MarkSquare(a);
             if (y != 0) _boardData[x, y - 1].MarkSquare(a);
-            if (x != 8 && y != 8) _boardData[x + 1, y + 1].MarkSquare(a);
-            if (x != 8) _boardData[x + 1, y].MarkSquare(a);
-            if (y != 8) _boardData[x, y + 1].MarkSquare(a);
-            if (x != 0 && y != 8) _boardData[x - 1, y + 1].MarkSquare(a);
-            if (x != 8 && y != 0) _boardData[x + 1, y - 1].MarkSquare(a);
+            if (x != 7 && y != 7) _boardData[x + 1, y + 1].MarkSquare(a);
+            if (x != 7) _boardData[x + 1, y].MarkSquare(a);
+            if (y != 7) _boardData[x, y + 1].MarkSquare(a);
+            if (x != 0 && y != 7) _boardData[x - 1, y + 1].MarkSquare(a);
+            if (x != 7 && y != 0) _boardData[x + 1, y - 1].MarkSquare(a);
         }
 
         /// <summary>
