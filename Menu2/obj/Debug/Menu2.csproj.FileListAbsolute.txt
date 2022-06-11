@@ -35,3 +35,6 @@ C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.pdb
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.JapanCrossword.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Chess.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.LevelSelectorTele.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.Chess.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.JapanCrossword.resources
+C:\Users\qwerty\RiderProjects\Menu2\Menu2\obj\Debug\Menu2.LevelSelectorTele.resources

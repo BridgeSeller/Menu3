@@ -69,6 +69,20 @@ namespace Menu2
             this.rebusLetter.UseVisualStyleBackColor = false;
             this.rebusLetter.Click += new System.EventHandler(this.rebusLetter_Click);
             // 
+            // sequenceButton
+            // 
+            this.sequenceButton.BackColor = System.Drawing.Color.Sienna;
+            this.sequenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sequenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.sequenceButton.Location = new System.Drawing.Point(600, 370);
+            this.sequenceButton.Name = "sequenceButton";
+            this.sequenceButton.Size = new System.Drawing.Size(72, 46);
+            this.sequenceButton.TabIndex = 6;
+            this.sequenceButton.Text = "Выход";
+            this.sequenceButton.UseVisualStyleBackColor = false;
+            this.sequenceButton.Click += new System.EventHandler(this.sequenceButton_Click);
+            this.sequenceButton.MouseEnter += new System.EventHandler(this.sequenceButton_MouseEnter);
+            // 
             // cipherButton
             // 
             this.cipherButton.AutoSize = true;
@@ -148,6 +162,7 @@ namespace Menu2
             this.Controls.Add(this.chessButton);
             this.Controls.Add(this.mineButton);
             this.Controls.Add(this.cipherButton);
+            this.Controls.Add(this.sequenceButton);
             this.Controls.Add(this.rebusLetter);
             this.Controls.Add(this.sudokuButton);
             this.Location = new System.Drawing.Point(15, 15);
@@ -158,12 +173,13 @@ namespace Menu2
         }
 
         private System.Windows.Forms.Button exit;
-
+        
         private System.Windows.Forms.Button chessButton;
         private System.Windows.Forms.Button JButton;
 
         private System.Windows.Forms.Button sudokuButton;
         private System.Windows.Forms.Button rebusLetter;
+        private System.Windows.Forms.Button sequenceButton;
         private System.Windows.Forms.Button cipherButton;
         private System.Windows.Forms.Button mineButton;
 

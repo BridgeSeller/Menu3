@@ -10,21 +10,27 @@ namespace Menu2
         private Bitmap Image;
        
         //private string[] ans = {"листок","Листок"};
-        private string[] ans = {"Гаара","гаара"};
+        private string ans = "";
 
         private string text = "Разгадайте, что на картинке";
         private int x = 480;
         private int y = 480;
-
+        private int scale = 50;
+        public int Level;
+        
         public FormR()
         {
             InitializeComponent();
         }
         
         private void FormR_Load(object sender, EventArgs e)
-        {
+        {Random rnd = new Random();
+            Level = rnd.Next(1, 10);
+            
             
             Size = new Size(x, y);
+            
+           // this.SizeChanged += new EventHandler(size_Changed);
             Label label = new Label();
             label.Location = new Point((x - 400) / 2, 20);
             label.Size = new Size(400, 50);
@@ -37,7 +43,50 @@ namespace Menu2
             pictureBox.Location = new Point((x-400)/2, 50);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Size = new Size(400, 190);
-            Image = new Bitmap(directory + @"Resources\img3.png");
+            switch (Level)
+            {
+                case 1:
+                    Image = new Bitmap(directory + @"Resources\img11.jpg");
+                    ans = "не знаю";
+                    break;
+                case 2:
+                    Image = new Bitmap(directory + @"Resources\img2.png");
+                    ans = "не знаю";
+                    break;
+                case 3:
+                    Image = new Bitmap(directory + @"Resources\img3.png");
+                    ans = "не знаю";
+                    break;
+                case 4:
+                    Image = new Bitmap(directory + @"Resources\img4.png");
+                    ans = "не знаю";
+                    break;
+                case 5:
+                    Image = new Bitmap(directory + @"Resources\img5.png");
+                    ans = "не знаю";
+                    break;
+                case 6:
+                    Image = new Bitmap(directory + @"Resources\img6.png");
+                    ans = "не знаю";
+                    break;
+                case 7:
+                    Image = new Bitmap(directory + @"Resources\img7.png");
+                    ans = "не знаю";
+                    break;
+                case 8:
+                    Image = new Bitmap(directory + @"Resources\img8.png");
+                    ans = "не знаю";
+                    break;
+                case 9:
+                    Image = new Bitmap(directory + @"Resources\img9.png");
+                    ans = "не знаю";
+                    break;
+                case 10:
+                    Image = new Bitmap(directory + @"Resources\img10.png");
+                    
+                    ans = "не знаю";
+                    break;
+            }
             pictureBox.Image = (Image) Image;
             Controls.Add(pictureBox);
 
@@ -51,17 +100,25 @@ namespace Menu2
             Button restart = new Button();
             restart.Location = new Point(x - 250,   y - 80);
             restart.Size = new Size(150, 30);
-            restart.Text = "Genre select";
+            restart.Text = "Выбор жанра";
             restart.MouseClick += new MouseEventHandler(button_Click2);
             Controls.Add(restart);
             
             Button level = new Button();
             level.Location = new Point(x - 450,   y - 80);
             level.Size = new Size(150, 30);
-            level.Text = "Level select";
+            level.Text = "Выбор уровня";
             level.MouseClick += new MouseEventHandler(button_Click3);
             Controls.Add(level);
 
+        }
+        
+        
+        private void size_Changed(object sender, EventArgs e)
+        {
+            scale = (int) Math.Min((Width - 20) / 11, (Height - 20) / 7.5);
+            if (scale < 10) scale = 10;
+            
         }
 
         private void TextCheck(object sender, KeyPressEventArgs e)
@@ -85,13 +142,11 @@ namespace Menu2
 
         private bool AnsCheck(string vvod)
         {
-            for (int i = 0; i < ans.Length; i++)
-            {
-                if (vvod.Equals(ans[i]))
+            if (vvod.Equals(ans))
                 {
                     return true;
                 }
-            }
+         
 
             return false;
         }

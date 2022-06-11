@@ -44,8 +44,9 @@ namespace Menu2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("In development");
-            //throw new System.NotImplementedException();
+            MessageBox.Show("В разработке участвовали: Потапович Иван;" + '\n'
+                           + "Некоторые другие лица " + '\n'+
+                            "Поддержите независимый проект на patreon.com/Puzzlerama!");
         }
 
         private void button4_Click(object sender, EventArgs e)
