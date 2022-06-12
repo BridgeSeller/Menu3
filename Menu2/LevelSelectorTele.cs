@@ -24,7 +24,7 @@ namespace Menu2
 
         private void LevelSelectorTele_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile("Back4.png");
+            this.BackgroundImage = Image.FromFile(@"res\Back4.png");
             this.SizeChanged += new EventHandler(size_Changed);
             
             Button exit = new Button();
@@ -85,12 +85,12 @@ namespace Menu2
                     seco.Show();
                     break;
                 case 'C':
-                    this.Hide();
+                    this.Close();
                     Chess chess = new Chess(((Button) sender).TabIndex);
                     chess.Show();
                     break;
                 case 'J':
-                    this.Hide();
+                    this.Close();
                     JapanCrossword japan = new JapanCrossword(((Button) sender).TabIndex);
                     japan.Show();
                     break;

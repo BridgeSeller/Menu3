@@ -31,7 +31,7 @@ namespace Menu2
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            BackgroundImage = Image.FromFile("Back6.png");
+            BackgroundImage = Image.FromFile(@"res\Back6.png");
             BackgroundImageLayout = ImageLayout.Stretch;
             int[] diff = SudokuLevelLayout.GetLevel(level);
             board = new SudokuBoard(diff[0]);

@@ -38,6 +38,7 @@ namespace Menu2
             this.mineButton = new System.Windows.Forms.Button();
             this.chessButton = new System.Windows.Forms.Button();
             this.JButton = new System.Windows.Forms.Button();
+            this.sequenceButton = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -68,20 +69,6 @@ namespace Menu2
             this.rebusLetter.Text = "Ребусы";
             this.rebusLetter.UseVisualStyleBackColor = false;
             this.rebusLetter.Click += new System.EventHandler(this.rebusLetter_Click);
-            // 
-            // sequenceButton
-            // 
-            this.sequenceButton.BackColor = System.Drawing.Color.Sienna;
-            this.sequenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sequenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.sequenceButton.Location = new System.Drawing.Point(600, 370);
-            this.sequenceButton.Name = "sequenceButton";
-            this.sequenceButton.Size = new System.Drawing.Size(72, 46);
-            this.sequenceButton.TabIndex = 6;
-            this.sequenceButton.Text = "Выход";
-            this.sequenceButton.UseVisualStyleBackColor = false;
-            this.sequenceButton.Click += new System.EventHandler(this.sequenceButton_Click);
-            this.sequenceButton.MouseEnter += new System.EventHandler(this.sequenceButton_MouseEnter);
             // 
             // cipherButton
             // 
@@ -137,11 +124,26 @@ namespace Menu2
             this.JButton.UseVisualStyleBackColor = false;
             this.JButton.Click += new System.EventHandler(this.japanCrossword_Click);
             // 
+            // sequenceButton
+            // 
+            this.sequenceButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sequenceButton.BackColor = System.Drawing.Color.Sienna;
+            this.sequenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sequenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.sequenceButton.Location = new System.Drawing.Point(553, 356);
+            this.sequenceButton.Name = "sequenceButton";
+            this.sequenceButton.Size = new System.Drawing.Size(84, 43);
+            this.sequenceButton.TabIndex = 6;
+            this.sequenceButton.Text = "Выход";
+            this.sequenceButton.UseVisualStyleBackColor = false;
+            this.sequenceButton.Click += new System.EventHandler(this.sequenceButton_Click);
+            this.sequenceButton.MouseEnter += new System.EventHandler(this.sequenceButton_MouseEnter);
+            // 
             // exit
             // 
             this.exit.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exit.AutoSize = true;
-            this.exit.Location = new System.Drawing.Point(570, 305);
+            this.exit.Location = new System.Drawing.Point(655, 356);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(90, 43);
             this.exit.TabIndex = 0;
@@ -156,7 +158,7 @@ namespace Menu2
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(667, 364);
+            this.ClientSize = new System.Drawing.Size(752, 415);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.JButton);
             this.Controls.Add(this.chessButton);

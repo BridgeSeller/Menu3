@@ -6,39 +6,33 @@ namespace Menu2
 {
     public partial class Form4 : Form
     {
-        private PictureBox picture;
         private Bitmap Image;
-        private int scale = 600;
-        public Form4()
+        private char Tip;
+        
+        public Form4(char tip)
         {
-            InitializeComponent();
-        }
-
-        public Form4( FormS f)
-        {
+            Tip = tip;
             InitializeComponent();
         }
 
         private void Form4_load(object sender, EventArgs e)
         {
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Location = new Point(0, 0);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.Size = new Size(scale, scale/2);
+            Size = new Size(350, 350);
             
-            Image = new Bitmap(FormS.directory + @"Resources\azb.png");
-            pictureBox.Image = (Image) Image;
-            picture = pictureBox;
-            Controls.Add(pictureBox);
-            
-            SizeChanged += new EventHandler(SizeChangedForm4);
-        }
-
-        private void SizeChangedForm4(object sender, EventArgs e)
-        {
-            scale = Math.Min(Size.Height*2-50, Size.Width);
-            if (scale < 10) scale = 10;
-            picture.Size = new Size(scale, scale/2);
+            switch (Tip)
+            {
+                case 'a':
+                    Image = new Bitmap(@"res\cipher\alph.jpg");
+                    break;
+                case 'z':
+                    Image = new Bitmap(@"res\cipher\azb.png");
+                    break;
+                default:
+                    Image = new Bitmap(@"res\cipher\img3.png");
+                    break;
+            }
+            BackgroundImage = Image;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

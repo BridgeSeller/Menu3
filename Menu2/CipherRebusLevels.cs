@@ -10,8 +10,7 @@ namespace Menu2
         private char currGame;
 
         private Button[] allbuttons;
-        private String[] but = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        
+
         private int scale = 50;
         
         public LevelCR(char game, int numberOfLevels)
@@ -25,7 +24,7 @@ namespace Menu2
 
         private void LevelSelectorTele_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile("Back4.png");
+            this.BackgroundImage = Image.FromFile(@"res\Back4.png");
             this.SizeChanged += new EventHandler(size_Changed);
             
             Button exit = new Button();
@@ -78,20 +77,16 @@ namespace Menu2
             {
                 case 'R':
                     this.Close();
-                    FormR third = new FormR();
-                   
+                    FormR third = new FormR(((Button) sender).TabIndex);
 
-                    
                     third.Show();
                     break;
                 case 'C':
                     this.Close();
-                    FormS seco = new FormS();
+                    FormS seco = new FormS(((Button) sender).TabIndex);
                     
                     seco.Show();
                     break;
-
-                    
             }
         }
 

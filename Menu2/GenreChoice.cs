@@ -35,19 +35,7 @@ namespace Menu2
             LevelSelectorTele levels = new LevelSelectorTele('M', 10);
             levels.Show();
         }
-
-        private void lockButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void ticTacToeButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormTic tic = new FormTic();
-            tic.Show();
-        }
-
+        
         private void sequenceButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -64,7 +52,7 @@ namespace Menu2
         private void rebusLetter_Click(object sender, EventArgs e)
         {
             this.Close();
-            LevelCR levels = new LevelCR('R', 10);
+            LevelCR levels = new LevelCR('R', 20);
             levels.Show();
 
         }
@@ -119,6 +107,9 @@ namespace Menu2
             cipherButton.Location = new Point(100+17*2*scale, 60+12*scale);
             allButtons[cipherButton.TabIndex] = cipherButton;
 
+            sequenceButton.Size = new Size(exit.Width, exit.Height);
+            sequenceButton.Location = new Point(exit.Location.X - exit.Width-scale*2, exit.Location.Y);
+            
             SizeChanged += new EventHandler(size_Changed);
         }
 
@@ -143,11 +134,13 @@ namespace Menu2
             
             cipherButton.Size = new Size(scale * 12, scale * 10);
             cipherButton.Location = new Point(100+17*2*scale, 60+12*scale);
+            
+            sequenceButton.Location = new Point(exit.Location.X - exit.Width-scale*2, exit.Location.Y);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Form1 Menu = new Form1();
             Menu.Show();
         }
@@ -158,23 +151,13 @@ namespace Menu2
             LevelSelectorTele levels = new LevelSelectorTele('C', 10);
             levels.Show();
         }
-
-        private void Exchange(object sender, EventArgs e)
-        {
-            
-            
-        }
-
+        
+        
         private void sequenceButton_MouseEnter(object sender, EventArgs e)
         {
-            if (sequenceButton.Location == new Point(600, 370))
-            {
-                sequenceButton.Location = new Point(500, 370);
-            }
-            else
-            {
-                sequenceButton.Location = new Point(600, 370);
-            }
+            sequenceButton.Location = sequenceButton.Location == new Point(exit.Location.X - exit.Width-scale*2, exit.Location.Y) ?
+                new Point(exit.Location.X - 2*exit.Width-scale*2, exit.Location.Y) :
+                new Point(exit.Location.X - exit.Width-scale*2, exit.Location.Y);
         }
     }
 }

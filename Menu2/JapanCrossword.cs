@@ -25,7 +25,7 @@ namespace Menu2
         }
         private void JapanCrossword_Load(object sender, EventArgs e)
         {
-            BackgroundImage = Image.FromFile("Back5.png");
+            BackgroundImage = Image.FromFile(@"res\Back5.png");
             board = new JapaneseCrosswordBoard(CrosswordLevelLayout.GetLevel(level));
             
             Size = new Size(700, 500);

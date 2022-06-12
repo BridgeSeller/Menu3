@@ -23,7 +23,7 @@ namespace Menu2
 
     private void Form1_Load(object sender, EventArgs e)
     {
-      BackgroundImage = Image.FromFile("Back7.png");
+      BackgroundImage = Image.FromFile(@"res\Back7.png");
       BackgroundImageLayout = ImageLayout.Stretch;
       SizeChanged += new EventHandler(size_Change);
       

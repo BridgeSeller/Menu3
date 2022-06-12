@@ -30,13 +30,12 @@ namespace Menu2
         {
             //this.Close();
             Application.Exit();
-
         }
 
 
         private void SwitchMenu(object sender, EventArgs e)
         {
-           this.Hide(); 
+           this.Close(); 
            GenreChoice second = new GenreChoice();
            second.Show();
         }
