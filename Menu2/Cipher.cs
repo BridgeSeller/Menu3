@@ -117,6 +117,7 @@ namespace Menu2
             Controls.Add(textBox);
 
             button = new Button();
+            button.FlatStyle = FlatStyle.Flat;
             button.Location = new Point(0, 0);
             button.Size = new Size(30, 30);
             button.Text = "?";
@@ -124,6 +125,7 @@ namespace Menu2
             Controls.Add(button);
             
             GenreSelector = new Button();
+            GenreSelector.FlatStyle = FlatStyle.Flat;
             GenreSelector.Location = new Point((int) ((x-40-150)*scale),   (int) ((y - 80)*scale));
             GenreSelector.Size = new Size(150, 30);
             GenreSelector.Text = "Выбор жанра";
@@ -131,6 +133,7 @@ namespace Menu2
             Controls.Add(GenreSelector);
             
             LevelSelector = new Button();
+            LevelSelector.FlatStyle = FlatStyle.Flat;
             LevelSelector.Location = new Point((int) (scale*(x-400)/2),   (int) ((y - 80)*scale));
             LevelSelector.Size = new Size(150, 30);
             LevelSelector.Text = "Выбор уровня";
