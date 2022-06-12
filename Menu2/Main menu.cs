@@ -16,11 +16,7 @@ namespace Menu2
         {
             InitializeComponent();
         }
-
-        void aboutItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("О программе");
-        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             //throw new System.NotImplementedException();
@@ -35,7 +31,7 @@ namespace Menu2
 
         private void SwitchMenu(object sender, EventArgs e)
         {
-           this.Close(); 
+           this.Hide(); 
            GenreChoice second = new GenreChoice();
            second.Show();
         }
@@ -43,19 +39,9 @@ namespace Menu2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("В разработке участвовали: Потапович Иван;" + '\n'
-                           + "Некоторые другие лица " + '\n'+
-                            "Поддержите независимый проект на patreon.com/Puzzlerama!");
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            //throw new System.NotImplementedException();
+            MessageBox.Show("В разработке участвовали: Потапович Иван," + '\n'
+                           + "Богатырев Дмитрий и Баловнева Юлия" + '\n'
+                           + "Особое спасибо Sorcerer1273!");
         }
     }
 }

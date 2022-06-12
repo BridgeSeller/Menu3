@@ -22,11 +22,9 @@ C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.FormS.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Form1.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.GenreChoice.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Form2.resources
-C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Options.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Properties.Resources.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.FormR.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.Form3.resources
-C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.FormTic.resources
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.GenerateResource.cache
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.CoreCompileInputs.cache
 C:\Users\Дмитрий\source\C#\Menu3\Menu2\obj\Debug\Menu2.csproj.CopyComplete

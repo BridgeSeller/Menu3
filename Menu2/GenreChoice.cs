@@ -13,14 +13,7 @@ namespace Menu2
             allButtons = new Button[7];
             InitializeComponent();
         }
-
-
-        private void quitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            MessageBox.Show("Thank you so much for quitting my game");
-        }
-
+        
         private void sudokuButton_Click(object sender, EventArgs e)
         {
             this.Close();
